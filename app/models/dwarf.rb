@@ -1,5 +1,6 @@
 class Dwarf < ApplicationRecord
   belongs_to :user
+  has_one_attached :photo
   SEXES = %w[male female no-binary]
   validates :name, presence: true
   validates :sexe, presence: true, inclusion: { in: SEXES }

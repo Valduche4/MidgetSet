@@ -1,6 +1,6 @@
 <h1><%= @dwarf.name %></h1>
 <br>
-
+<%= cl_image_tag @dwarf.photo.key, height: 300, width: 400, crop: :fill %>
 
 <%= @dwarf.user.username %>
 
