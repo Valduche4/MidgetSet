@@ -1,0 +1,11 @@
+  <h1>Nos nains</h1>
+
+  <ul>
+    <% @dwarves.each do |dwarf| %>
+      <li>
+          <%= link_to dwarf.name, dwarf_path(dwarf) %>
+      </li>
+    <% end %>
+  </ul>
+
+<%= link_to "Add a dwarf", new_dwarf_path %>
