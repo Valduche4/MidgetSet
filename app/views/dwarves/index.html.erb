@@ -4,7 +4,10 @@
   <ul>
     <% @dwarves.each do |dwarf| %>
       <li>
-          <%= link_to dwarf.name, dwarf_path(dwarf) %>
+         <%= dwarf.name %> == //<%= link_to "show", dwarf_path(dwarf) %> || <%= link_to "edit",  edit_dwarf_path(dwarf) %> || <%= link_to "🗑",
+                                                                                                                                    dwarf_path(dwarf),
+                                                                                                                                    method: :delete,
+                                                                                                                                    data: { confirm: "Are you sure?" } %></li>
       </li>
     <% end %>
   </ul>
