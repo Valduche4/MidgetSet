@@ -1,15 +1,18 @@
 <%# <%= render: "form", dwarf: @dwarf %>
-<div class="container">
-  <%= simple_form_for(@dwarf) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :sexe %>
-    <%= f.input :origin %>
-    <%= f.input :age %>
-    <%= f.input :size %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :city %>
-     <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+<div class="container m-0">
+  <div class="new-banner">
+    <p>Add a new dwarf</p>
+  </div>
+    <%= simple_form_for(@dwarf) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :sexe, as: :select, collection: %w(male female non-binary) %>
+      <%= f.input :origin %>
+      <%= f.input :age %>
+      <%= f.input :size %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :city %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
 </div>
