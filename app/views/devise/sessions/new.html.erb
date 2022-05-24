@@ -1,10 +1,5 @@
-<div class="image-login">
-  <img src="https://t4.ftcdn.net/jpg/02/94/71/77/360_F_294717727_rYbKZ0vmgOJuqtwdIv2ycB9qXUF6ooZV.jpg" alt="Login photo">
-  <div class="login-title">
-    <h2>Log in</h2>
-  </div>
-
-  <div class="login m-5">
+<div class="form-box">
+    <h2>Log in now!!</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
       <%# <%= f.input :username,
@@ -22,9 +17,8 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Log in" %>
+        <button class="background-color:darkgrey"><%= f.button :submit, "Log in" %></button>
       </div>
     <% end %>
-  </div>
+    <%= render "devise/shared/links" %>
 </div>
-<%= render "devise/shared/links" %>
