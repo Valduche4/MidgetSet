@@ -1,2 +1,9 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container > h1 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 80px;
+  align-items: center;
+  margin-bottom: 20px;
+}
