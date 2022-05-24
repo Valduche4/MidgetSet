@@ -26,3 +26,129 @@ legend ~ div.form-check:first-of-type {
   font-family: Arial, Helvetica, sans-serif;
   }
 }
+
+// .image-login {
+//   background-image: url("https://t4.ftcdn.net/jpg/02/94/71/77/360_F_294717727_rYbKZ0vmgOJuqtwdIv2ycB9qXUF6ooZV.jpg");
+//   width: auto;
+//   height: auto;
+//   background-size: cover;
+// }h2 {
+//     font-family: Arial, Helvetica, sans-serif;
+//     font-size: 25px;
+//     text-align: center;
+//     color: bisque;
+// }
+
+.form-box {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 500px;
+	height: 430px;
+} h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: bisque;
+}a{
+  text-decoration: none;
+  display: inline;
+  width: auto;
+}
+
+.form-box:before {
+	background-image: url("https://t4.ftcdn.net/jpg/02/94/71/77/360_F_294717727_rYbKZ0vmgOJuqtwdIv2ycB9qXUF6ooZV.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+}
+.form-box .header-text {
+	font-size: 32px;
+	font-weight: 600;
+	padding-bottom: 30px;
+	text-align: center;
+}
+.form-box input {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 18px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.form-box input[type=checkbox] {
+	display: none;
+  color: #BBB;
+  border: #BBB;
+}
+.form-box label {
+	position: relative;
+	margin:0;
+	top: 5px;
+	display: inline;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.form-box label:before {
+	content: "";
+	display: inline;
+	width: 50px;
+	height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: transparent;
+  border-style: groove white;
+}
+.form-box input[type=checkbox]:checked+label:before {
+	content: "\2713";
+	font-size: 20px;
+	color: #BBB;
+	text-align: center;
+	line-height: 20px;
+  margin: 0;
+  border-style: groove white ;
+}
+
+.form-box button {
+	background-color: transparent;
+	color: #fff;
+	border: 2px white;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 20px 0px;
+}.btn:hover{
+  color: black;
+  background-color: darkgrey;
+  border:#BBB;
+}
+
+.form-check{
+  text-align: justify;
+  margin:0;
+}
+.form-inputs {
+  color: #BBB;
+}
