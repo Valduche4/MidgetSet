@@ -48,9 +48,11 @@
   // transition-property: padding ;
 }
 
-.container {
+.container-homepage {
   text-align: center;
   padding-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
   h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 3em;
@@ -58,13 +60,13 @@
   }
 }
 
-.cards {
+.cards-homepage {
   display: flex;
   justify-content: space-between;
 
 }
 
-.card {
+.card-homepage {
   height: 400px;
   width: 350px;
   // text-align: center;
@@ -80,7 +82,7 @@
   }
 }
 
-.card-img {
+.card-img-homepage {
 width: 150px;
 height: auto;
 }

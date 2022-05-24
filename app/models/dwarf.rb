@@ -3,7 +3,7 @@ class Dwarf < ApplicationRecord
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
   has_many :reservations, dependent: :destroy
-  SEXES = %w[male female no-binary]
+  SEXES = %w[male female non-binary]
   validates :name, presence: true
   validates :sexe, presence: true, inclusion: { in: SEXES }
   validates :origin, presence: true
