@@ -1,1 +1,74 @@
 // Specific CSS for your home-page
+.banner {
+  background-image: url("https://www.critikat.com/wp-content/uploads/fly-images/283922/The-Wolf-of-Wall-Street-0010-1450x800-c.jpg");
+  background-position: top;
+  color: white;
+  height: 600px;
+  // text-align: center;
+  // align-items: center;
+
+  opacity: 0.7;
+  h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10.5em;
+    padding-top: 110px;
+    opacity: 1;
+
+  }
+  h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 1;
+    color: white;
+    font-size: 2em;
+  }
+}
+
+.titre {
+  display: block;
+  width: 750px;
+  border-bottom: 1px solid white;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+.butt {
+  margin-left: 20px;
+  background-color: rgb(239, 12, 99);
+  width: max-content;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  margin-top: 30px;
+  font-size: larger;
+}
+
+.butt:hover {
+  padding: 15px 20px;
+  transition-duration: 2s, 2s;
+  // transition-property: padding ;
+}
+
+.container {
+  text-align: center;
+  padding-top: 30px;
+  h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    padding-bottom: 30px;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.card {
+  height: 300px;
+  width: 350px;
+}
+
+.logo {
+  size: 100px;
+}
