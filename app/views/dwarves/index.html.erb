@@ -4,17 +4,6 @@
 <%# <%= link_to "show", dwarf_path(dwarf) %>
  <%# <%= link_to "edit",  edit_dwarf_path(dwarf) %>
 
-  <ul>
-    <% @dwarves.each do |dwarf| %>
-      <li>
-         <%= dwarf.name %> == //<%= link_to "show", dwarf_path(dwarf) %> ||
-         <%= link_to "edit",  edit_dwarf_path(dwarf) if policy(dwarf).edit?%> ||
-         <%= link_to "🗑", dwarf_path(dwarf), method: :delete, data: { confirm: "Are you sure?" } if policy(dwarf).destroy? %>
-      </li>
-    <% end %>
-  </ul>
-
-<%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
 
 <div class="container">
   <h1> Our dwarves </h1>
@@ -30,7 +19,13 @@
                 <h2 class="card-trip-pricing">€<%= dwarf.price %>/h</h2>
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
+              <div class="card-trip-button">
+                <%= link_to "✎",  edit_dwarf_path(dwarf) if policy(dwarf).edit?%>
+                <%= link_to "🗑", dwarf_path(dwarf), method: :delete, data: { confirm: "Are you sure?" } if policy(dwarf).destroy? %>
+              </div>
             </div>
           <% end %>
         </div>
 </div>
+
+<%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
