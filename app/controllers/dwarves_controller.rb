@@ -1,7 +1,7 @@
 class DwarvesController < ApplicationController
   before_action :set_dwarf, only: [:show, :edit, :update, :destroy]
   def index
-    @dwarves = Dwarf.all
+    @dwarves = policy_scope(Dwarf.all)
   end
 
   def show
@@ -9,11 +9,13 @@ class DwarvesController < ApplicationController
 
   def new
     @dwarf = Dwarf.new
+    authorize @dwarf
   end
 
   def create
     @dwarf = Dwarf.new(dwarf_params)
     @dwarf.user = current_user
+    authorize @dwarf
     if @dwarf.save
       redirect_to dwarves_path
     else
@@ -40,8 +42,6 @@ class DwarvesController < ApplicationController
     redirect_to dwarves_path
   end
 
-
-
   private
 
   def dwarf_params
@@ -50,5 +50,6 @@ class DwarvesController < ApplicationController
 
   def set_dwarf
     @dwarf = Dwarf.find(params[:id])
+    authorize @dwarf
   end
 end

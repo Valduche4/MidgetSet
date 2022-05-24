@@ -4,14 +4,13 @@
   <ul>
     <% @dwarves.each do |dwarf| %>
       <li>
-         <%= dwarf.name %> == //<%= link_to "show", dwarf_path(dwarf) %> || <%= link_to "edit",  edit_dwarf_path(dwarf) %> || <%= link_to "🗑",
-                                                                                                                                    dwarf_path(dwarf),
-                                                                                                                                    method: :delete,
-                                                                                                                                    data: { confirm: "Are you sure?" } %></li>
+         <%= dwarf.name %> == //<%= link_to "show", dwarf_path(dwarf) %> ||
+         <%= link_to "edit",  edit_dwarf_path(dwarf) if policy(dwarf).edit?%> ||
+         <%= link_to "🗑", dwarf_path(dwarf), method: :delete, data: { confirm: "Are you sure?" } if policy(dwarf).destroy? %>
       </li>
     <% end %>
   </ul>
 
-<%= link_to "Add a dwarf", new_dwarf_path %>
+<%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
 
 <p>Ceci est ma branche</p>
