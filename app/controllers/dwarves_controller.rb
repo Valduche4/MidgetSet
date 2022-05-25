@@ -29,9 +29,7 @@ class DwarvesController < ApplicationController
   end
 
   def update
-    @dwarf = Dwarf.new(dwarf_params)
-    @dwarf.update
-    if @dwarf.save
+    if @dwarf.update(dwarf_params)
       redirect_to dwarf_path(@dwarf)
     else
       render :new
