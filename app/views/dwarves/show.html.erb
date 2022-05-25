@@ -1,48 +1,66 @@
-<h1><%= @dwarf.name %></h1>
-<br>
-<%= cl_image_tag @dwarf.photo.key, height: 300, width: 400, crop: :fill %>
+<h1 class="titre-dwarf"><%= @dwarf.name %></h1>
 
-<%= @dwarf.user.username %>
-<br>
-<ul>
+<div class="total-dwarf">
+  <div class="un-dwarf">
+    <div class="img-dwarf">
+      <%= cl_image_tag @dwarf.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="info-dwarf">
+      <ul class="list-dwarf">
+        <li> <%= @dwarf.name %> </li>
+        <li> <%= @dwarf.sexe %> </li>
+        <li> <%= @dwarf.origin %> </li>
+        <li> <%= @dwarf.age %> </li>
+        <li> <%= @dwarf.size %> </li>
+        <li> <%= @dwarf.city %> </li>
+        <%= link_to "🗑", dwarf_path(@dwarf), class: "btn", method: :delete, data: { confirm: "Are you sure?" } %></li>
+      </ul>
+    </div>
+    <div class="description-dwarf">
+      <%= @dwarf.description %>
+    </div>
+    <div class="contact-dwarf">
+      <%= @dwarf.price %>€
+      <br>
+      Contact now <%= @dwarf.user.username %>, to book this dwarf !
+    </div>
+  </div>
 
-  <% @dwarf.reviews.each do |review| %>
-      <li><%=  review.content %> || <%= review.rating %>
-        <% if policy(review).destroy? %>
-          <%= link_to "🗑",
-                  review_path(review),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
+  <div class="deux-dwarf">
+    <div class="review-dwarf">
+      <ul>
+        <% @dwarf.reviews.each do |review| %>
+            <li><%=  review.content %> || <%= review.rating %>
+              <% if policy(review).destroy? %>
+                <%= link_to "🗑",
+                        review_path(review),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %></li>
+              <% end %>
         <% end %>
-  <% end %>
-</ul>
+      </ul>
+      <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
+    </div>
 
-
-  <%= link_to "Add a review", new_dwarf_review_path(@dwarf) %>
-<br>
-<%= link_to "Book now!", new_dwarf_reservation_path(@dwarf) %>
-<br>
-<%= link_to "back to index", dwarves_path %>
-
-<ul>
-  <% @dwarf.reservations.each do |reservation| %>
-    <li><%=  reservation.start_time %> || <%= reservation.end_time %>
-        <% if policy(reservation).destroy? %>
-          <%= link_to "🗑",
-                  reservation_path(reservation),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-            <% end %>
-        <% if current_user == @dwarf.user && reservation.validation == false%>
-        <%= link_to "accept", reservation_validations_path(reservation), method: :post %>
+    <div class="reservation-dwarf">
+      <ul>
+        <% @dwarf.reservations.each do |reservation| %>
+          <li><%=  reservation.start_time %> || <%= reservation.end_time %>
+              <% if current_user == @dwarf.user && reservation.validation == false%>
+                 <%= link_to "accept", reservation_validations_path(reservation), method: :post %>
+              <% end %>
+              <% if policy(reservation).destroy? %>
+                <%= link_to "🗑",
+                        reservation_path(reservation),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %></li>
+                        <% end %>
         <% end %>
-  <% end %>
-</ul>
+      </ul>
+      <%= link_to "Book now!", new_dwarf_reservation_path(@dwarf), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
 
-
-
-<br><br><br>
-    <%= link_to "🗑",
-          dwarf_path(@dwarf),
-          method: :delete,
-          data: { confirm: "Are you sure?" }%></li>
+ 
+<%= link_to "back to index", dwarves_path, class: "btn btn-secondary"%>
