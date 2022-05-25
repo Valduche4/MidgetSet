@@ -13,8 +13,10 @@ class DwarvesController < ApplicationController
   end
 
   def create
+    p dwarf_params
     @dwarf = Dwarf.new(dwarf_params)
     @dwarf.user = current_user
+
     authorize @dwarf
     if @dwarf.save
       redirect_to dwarves_path
@@ -45,7 +47,7 @@ class DwarvesController < ApplicationController
   private
 
   def dwarf_params
-    params.require(:dwarf).permit(:name, :sexe, :origin, :age, :size, :description, :price, :city, :photo)
+    params.require(:dwarf).permit(:name, :sexe, :origin, :age, :size, :description, :price, :city, :photo, job_ids: [])
   end
 
   def set_dwarf

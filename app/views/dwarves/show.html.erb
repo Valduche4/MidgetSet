@@ -4,6 +4,12 @@
 
 <%= @dwarf.user.username %>
 <br>
+<p>I am a :<% @dwarf.jobs.each do |job| %>
+   <%= job.name %>,
+  <% end %>
+</p>
+
+<br>
 <ul>
   <% @dwarf.reviews.each do |review| %>
     <li><%=  review.content %> || <%= review.rating %> <%= link_to "🗑",
