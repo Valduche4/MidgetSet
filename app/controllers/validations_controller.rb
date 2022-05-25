@@ -1,6 +1,5 @@
 class ValidationsController < ApplicationController
   def create
-    puts params
     @reservation = Reservation.find(params[:reservation_id])
     @reservation.validation = true
     @reservation.save
