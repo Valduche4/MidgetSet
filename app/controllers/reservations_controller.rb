@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
   def new
     @dwarf = Dwarf.find(params[:dwarf_id])
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
@@ -18,6 +19,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.dwarf = @dwarf
     @reservation.user = current_user
+    authorize @reservation
     if @reservation.save
       redirect_to dwarf_path(@reservation.dwarf)
     else
@@ -27,6 +29,7 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
+    authorize @reservartion
     @reservation.destroy
 
     redirect_to dwarf_path(@reservation.dwarf)

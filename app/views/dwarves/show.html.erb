@@ -5,18 +5,20 @@
 <%= @dwarf.user.username %>
 <br>
 <ul>
+
   <% @dwarf.reviews.each do |review| %>
-    <li><%=  review.content %> || <%= review.rating %> <%= link_to "🗑",
-            review_path(review),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></li>
+      <li><%=  review.content %> || <%= review.rating %>
+        <% if policy(review).destroy? %>
+          <%= link_to "🗑",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+        <% end %>
   <% end %>
 </ul>
 
 
-
-
-<%= link_to "Add a review", new_dwarf_review_path(@dwarf) %>
+  <%= link_to "Add a review", new_dwarf_review_path(@dwarf) %>
 <br>
 <%= link_to "Book now!", new_dwarf_reservation_path(@dwarf) %>
 <br>
@@ -24,10 +26,13 @@
 
 <ul>
   <% @dwarf.reservations.each do |reservation| %>
-    <li><%=  reservation.start_time %> || <%= reservation.end_time %> <%= link_to "🗑",
-            reservation_path(reservation),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %></li>
+    <li><%=  reservation.start_time %> || <%= reservation.end_time %>
+        <% if policy(reservation).destroy? %>
+          <%= link_to "🗑",
+                  reservation_path(reservation),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+                  <% end %>
   <% end %>
 </ul>
 
