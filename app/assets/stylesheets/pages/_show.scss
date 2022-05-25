@@ -1,0 +1,66 @@
+.titre-dwarf {
+  text-align: center;
+  margin: 20px 0px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.total-dwarf {
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.un-dwarf {
+  margin: 30px 15px;
+  background-color: white;
+  width: 45%;
+  .info-dwarf {
+    background-color: grey;
+    margin: 10px 10px;
+    padding: 15px;
+  }
+}
+
+.img-dwarf {
+  margin: 10px;
+}
+
+.list-dwarf {
+  list-style-type: none;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 0px;
+}
+
+.description-dwarf {
+  background-color: grey;
+  margin: 10px 10px;
+  padding: 15px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact-dwarf {
+  background-color: grey;
+  margin: 10px 10px;
+  padding: 15px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.deux-dwarf {
+  width: 45%;
+}
+.review-dwarf {
+  background-color: white;
+  margin: 30px 15px;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reservation-dwarf {
+  background-color: white;
+  margin: 30px 15px;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

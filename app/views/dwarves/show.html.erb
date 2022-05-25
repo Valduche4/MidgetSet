@@ -1,30 +1,33 @@
-<h1><%= @dwarf.name %></h1>
+<h1 class="titre-dwarf"><%= @dwarf.name %></h1>
 
-<div class="total-dwart">
-  <div class="un-dwart">
-    <div class="img-dwart">
+<div class="total-dwarf">
+  <div class="un-dwarf">
+    <div class="img-dwarf">
       <%= cl_image_tag @dwarf.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
-    <div class="info-dwart">
-      <%= @dwarf.name %>
-      <%= @dwarf.sexe %>
-      <%= @dwarf.origin %>
-      <%= @dwarf.age %>
-      <%= @dwarf.size %>
-      <%= @dwarf.city %>
-      <%= link_to "🗑", dwarf_path(@dwarf), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <div class="info-dwarf">
+      <ul class="list-dwarf">
+        <li> <%= @dwarf.name %> </li>
+        <li> <%= @dwarf.sexe %> </li>
+        <li> <%= @dwarf.origin %> </li>
+        <li> <%= @dwarf.age %> </li>
+        <li> <%= @dwarf.size %> </li>
+        <li> <%= @dwarf.city %> </li>
+        <%= link_to "🗑", dwarf_path(@dwarf), class: "btn", method: :delete, data: { confirm: "Are you sure?" } %></li>
+      </ul>
     </div>
-    <div class="description-dwart">
+    <div class="description-dwarf">
       <%= @dwarf.description %>
     </div>
-    <div class="contact-dwart">
-      <%= @dwarf.price %>
-      <%= @dwarf.user.username %>
+    <div class="contact-dwarf">
+      <%= @dwarf.price %>€
+      <br>
+      Contact now <%= @dwarf.user.username %>, to book this dwarf !
     </div>
   </div>
 
-  <div class="deux-dwart">
-    <div class="review-dwart">
+  <div class="deux-dwarf">
+    <div class="review-dwarf">
       <ul>
         <% @dwarf.reviews.each do |review| %>
             <li><%=  review.content %> || <%= review.rating %>
@@ -36,10 +39,10 @@
               <% end %>
         <% end %>
       </ul>
-      <%= link_to "Add a review", new_dwarf_review_path(@dwarf) %>
+      <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
     </div>
 
-    <div class="reservation-dwart">
+    <div class="reservation-dwarf">
       <ul>
         <% @dwarf.reservations.each do |reservation| %>
           <li><%=  reservation.start_time %> || <%= reservation.end_time %>
@@ -51,9 +54,9 @@
                         <% end %>
         <% end %>
       </ul>
-      <%= link_to "Book now!", new_dwarf_reservation_path(@dwarf) %>
+      <%= link_to "Book now!", new_dwarf_reservation_path(@dwarf), class: "btn btn-primary" %>
     </div>
   </div>
 </div>
 
-<%= link_to "back to index", dwarves_path %>
+<%= link_to "back to index", dwarves_path, class: "btn btn-secondary"%>
