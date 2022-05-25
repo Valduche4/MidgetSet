@@ -58,6 +58,9 @@
       <ul>
         <% @dwarf.reservations.each do |reservation| %>
           <li><%=  reservation.start_time %> || <%= reservation.end_time %>
+              <% if current_user == @dwarf.user && reservation.validation == false%>
+                 <%= link_to "accept", reservation_validations_path(reservation), method: :post %>
+              <% end %>
               <% if policy(reservation).destroy? %>
                 <%= link_to "🗑",
                         reservation_path(reservation),
@@ -71,4 +74,5 @@
   </div>
 </div>
 
+ 
 <%= link_to "back to index", dwarves_path, class: "btn btn-secondary"%>

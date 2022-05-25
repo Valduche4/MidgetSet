@@ -28,7 +28,7 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
-    authorize @reservartion
+    authorize @reservation
     @reservation.destroy
 
     redirect_to dwarf_path(@reservation.dwarf)
