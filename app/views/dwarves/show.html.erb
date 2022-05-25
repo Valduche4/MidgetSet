@@ -32,14 +32,17 @@
                   reservation_path(reservation),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %></li>
-                  <% end %>
+            <% end %>
+        <% if current_user == @dwarf.user && reservation.validation == false%>
+        <%= link_to "accept", reservation_validations_path(reservation), method: :post %>
+        <% end %>
   <% end %>
 </ul>
 
 
 
 <br><br><br>
-<%= link_to "🗑",
-      dwarf_path(@dwarf),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %></li>
+    <%= link_to "🗑",
+          dwarf_path(@dwarf),
+          method: :delete,
+          data: { confirm: "Are you sure?" }%></li>
