@@ -1,7 +1,11 @@
-<h1>Your reservations</h1>
+<h1 class="resa-title">Your reservations</h1>
 
-<ul>
- <% @reservations.each do |reservation| %>
- <li><%= reservation.dwarf.name %><%= reservation.start_time %>||<%= reservation.end_time %></li>
- <% end %>
-</ul>
+<% @reservations.each do |reservation| %>
+    <div class="card-product">
+      <%= cl_image_tag reservation.dwarf.photo.key %>
+        <div class="card-product-infos">
+          <h2><%= reservation.dwarf.name %></h2>
+          <p><%= reservation.start_time %>|  |<%= reservation.end_time %></p>
+        </div>
+    </div>
+<% end %>
