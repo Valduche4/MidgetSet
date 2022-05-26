@@ -8,3 +8,40 @@
   align-items: center;
   margin-bottom: 20px;
 }
+.banner-dwarves {
+  background-image: url("https://static1.colliderimages.com/wordpress/wp-content/uploads/the-hobbit-an-unexpected-journey-dwarf-banner-slice.jpg?q=50&fit=contain&w=960&h=320&dpr=1.5");
+  color: beige;
+  margin:0;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card-dwarves{
+  background-color: cornsilk;
+  .card-trip-info {
+    background-color:rgb(211, 211, 211) ;
+  }
+}
+
+.link-container-index  {
+  margin: 70px;
+  display: inline;
+  button {
+    background-color:rgb(2, 75, 2);
+    border: solid;
+    border-radius: 5%;
+    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    a{
+      text-decoration: none;
+      color: antiquewhite;
+    }
+  }
+}
