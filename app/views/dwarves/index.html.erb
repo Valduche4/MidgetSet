@@ -4,9 +4,14 @@
 <%# <%= link_to "show", dwarf_path(dwarf) %>
  <%# <%= link_to "edit",  edit_dwarf_path(dwarf) %>
 
-
+ <div class="banner-dwarves">
+    <h1> Dwarves </h1>
+    <div class="link-button-index">
+      <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
+    </div>
+</div>
+<br>
 <div class="container">
-  <h1> Our dwarves </h1>
         <div class="cards-dwarves">
           <% @dwarves.each do |dwarf| %>
             <div class="card-trip">
@@ -28,4 +33,6 @@
         </div>
 </div>
 
-<%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
+<div class="button-bottom-link">
+  <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
+</div>
