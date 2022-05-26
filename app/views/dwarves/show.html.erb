@@ -70,3 +70,9 @@
 
 
 <%# height: 300, width: 400, crop: :fill %>
+
+
+<li><% @dwarf.jobs.each do |job| %>
+                    <%= job.name %>
+                    <% end %></li>
+<%= @dwarf.user.username %>

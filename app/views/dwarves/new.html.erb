@@ -13,6 +13,7 @@
       <%= f.input :price %>
       <%= f.input :city %>
       <%= f.input :photo, as: :file %>
+      <%= f.association :jobs, as: :check_boxes, collection: Job.all %>
       <%= f.submit %>
     <% end %>
 </div>

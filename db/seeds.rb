@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+jobs = Job.create([{ name: "Wrestler" }, { name: "Stripteaser"}, { name: "Cosplay"}, { name: "Darts"}, { name: "Canonman"}, { name: "Friend"}, { name: "Bachelor animator"}, { name: "Signer"}])
