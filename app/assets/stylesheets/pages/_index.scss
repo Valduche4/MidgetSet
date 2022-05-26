@@ -8,3 +8,67 @@
   align-items: center;
   margin-bottom: 20px;
 }
+.banner-dwarves {
+  background-image: url("https://static1.colliderimages.com/wordpress/wp-content/uploads/the-hobbit-an-unexpected-journey-dwarf-banner-slice.jpg?q=50&fit=contain&w=960&h=320&dpr=1.5");
+  color: beige;
+  height: 500px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:120px;
+    padding-top: 110px;
+    opacity: 1;
+    margin-left: 100px;
+  }
+}
+
+.button-bottom-link{
+  // text-align: center;
+  background-color: rgb(239, 12, 99);
+  border-radius: 5px;
+  width: max-content;
+  padding: 5px 10px;
+  margin-top: 30px;
+  margin-left: 648px;
+  font-size: larger;
+  a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
+.button-bottom-link:hover{
+  padding: 15px 20px;
+  transition-duration: 2s, 2s;
+}
+
+.link-button-index {
+  margin-left: 100px;
+  background-color: rgb(239, 12, 99);
+  width: max-content;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: larger;
+  text-decoration: none;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+.link-button-index:hover {
+  padding: 15px 20px;
+  transition-duration: 2s, 2s;
+}
+
+.card-dwarves{
+  padding-top: 40px;
+  background-color: cornsilk;
+  .card-trip-info {
+    background-color:rgb(211, 211, 211) ;
+  }
+}
