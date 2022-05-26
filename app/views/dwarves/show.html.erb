@@ -1,16 +1,9 @@
 <h1 class="titre-dwarf"><%= @dwarf.name %></h1>
 
-<<<<<<< HEAD
-<%= @dwarf.user.username %>
-<br>
-<p>I am a :<% @dwarf.jobs.each do |job| %>
-   <%= job.name %>,
-  <% end %>
-</p>
+
 
 <br>
 <ul>
-=======
 <div class="total-dwarf">
   <div class="un-dwarf">
     <div class="img-dwarf">
@@ -24,6 +17,9 @@
         <li> <%= @dwarf.age %> </li>
         <li> <%= @dwarf.size %> </li>
         <li> <%= @dwarf.city %> </li>
+        <li><% @dwarf.jobs.each do |job| %>
+                    <%= job.name %>
+                    <% end %></li>
         <%= link_to "🗑", dwarf_path(@dwarf), class: "btn", method: :delete, data: { confirm: "Are you sure?" } %></li>
       </ul>
     </div>
@@ -36,7 +32,6 @@
       Contact now <%= @dwarf.user.username %>, to book this dwarf !
     </div>
   </div>
->>>>>>> 025a1f6403b148f55d166e5adb0fd3182a6f0e4c
 
   <div class="deux-dwarf">
     <div class="review-dwarf">
@@ -74,5 +69,7 @@
   </div>
 </div>
 
- 
+<%= @dwarf.user.username %>
+
+
 <%= link_to "back to index", dwarves_path, class: "btn btn-secondary"%>
