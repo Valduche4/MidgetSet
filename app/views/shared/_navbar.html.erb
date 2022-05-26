@@ -17,9 +17,10 @@
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Add a dwarf", "/dwarves/new", class: "dropdown-item" %>
-              <%= link_to "My dwarves", "#", class: "dropdown-item" %>
-              <%= link_to "My reservations", "/reservations", class: "dropdown-item" %>
+              <%= link_to "Dwarves market", dwarves_path, class: "dropdown-item" %>
+              <%= link_to "Add a dwarf", new_dwarf_path, class: "dropdown-item" %>
+              <%= link_to "My dwarves", current_user_dwarves_path, class: "dropdown-item" %>
+              <%= link_to "My reservations", reservations_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

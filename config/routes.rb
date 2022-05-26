@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  namespace :current_user do
+    resources :dwarves, only: :index
+  end
   resources :dwarves do
     resources :reviews, only: [:index, :new, :create]
     resources :reservations, only: [:index, :show, :new, :create]

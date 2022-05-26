@@ -26,14 +26,13 @@
 
 .button-bottom-link{
   // text-align: center;
-  background-color: rgb(239, 12, 99);
-  border-radius: 5px;
-  width: max-content;
-  padding: 5px 10px;
   margin-top: 30px;
-  margin-left: 648px;
-  font-size: larger;
+  text-align: center;
   a {
+    background-color: rgb(239, 12, 99);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: larger;
     text-align: center;
     text-decoration: none;
     color: white;
@@ -41,7 +40,7 @@
 }
 
 
-.button-bottom-link:hover{
+.button-bottom-link > a:hover{
   padding: 15px 20px;
   transition-duration: 2s, 2s;
 }
