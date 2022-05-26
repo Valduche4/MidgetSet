@@ -1,9 +1,10 @@
 <%# <%= render: "form", dwarf: @dwarf %>
-<div class="form m-0">
-  <div class="new-banner">
-    <p>Add a new dwarf</p>
-  </div>
+<div class="form-new">
+    <div class="banner-new">
+      <h1>Add a new dwarf</h1>
+    </div>
     <%= simple_form_for(@dwarf) do |f| %>
+    <div class="form-input-new">
       <%= f.input :name %>
       <%= f.input :sexe, as: :select, collection: %w(male female non-binary) %>
       <%= f.input :origin %>
@@ -14,6 +15,9 @@
       <%= f.input :city %>
       <%= f.input :photo, as: :file %>
       <%= f.association :jobs, as: :check_boxes, collection: Job.all %>
-      <%= f.submit %>
+      <div class="button-submit-new">
+        <button><%= f.button :submit, "submit" %></button>
+      </div>
+    </div>
     <% end %>
 </div>
