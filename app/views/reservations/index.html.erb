@@ -1,0 +1,7 @@
+<h1>Your reservations</h1>
+
+<ul>
+ <% @reservations.each do |reservation| %>
+ <li><%= reservation.dwarf.name %><%= reservation.start_time %>||<%= reservation.end_time %></li>
+ <% end %>
+</ul>
