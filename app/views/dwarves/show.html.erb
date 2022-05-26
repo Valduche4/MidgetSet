@@ -1,31 +1,33 @@
-<h1 class="titre-dwarf"><%= @dwarf.name %></h1>
-
-<div class="total-dwarf">
+<div class="card-dwarf">
   <div class="un-dwarf">
     <div class="img-dwarf">
-      <%= cl_image_tag @dwarf.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @dwarf.photo.key, class: "card-dwarf-img" %>
     </div>
-    <div class="info-dwarf">
-      <ul class="list-dwarf">
-        <li> <%= @dwarf.name %> </li>
-        <li> <%= @dwarf.sexe %> </li>
-        <li> <%= @dwarf.origin %> </li>
-        <li> <%= @dwarf.age %> </li>
-        <li> <%= @dwarf.size %> </li>
-        <li> <%= @dwarf.city %> </li>
-        <%= link_to "🗑", dwarf_path(@dwarf), class: "btn", method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <div class="card-dwarf-infos p-4">
+      <h2 class="pb-4"> <%= @dwarf.name %> </h2>
+      <ul class="list-unstyled d-flex justify-content-between border-top border-bottom pb-4 pt-4">
+        <li class="border-left"><p> Sexe : <%= @dwarf.sexe%></p></li>
+        <li class="border-left"><p>Origin : <%= @dwarf.origin %></p></li>
+        <li class="pl-2"><p>Age :<%= @dwarf.age %></p></li>
+        <li class="pl-2"><p>Size :<%= @dwarf.size %> cm</p></li>
+        <li class="pl-2"><p>City :<%= @dwarf.city %></p></li>
       </ul>
     </div>
-    <div class="description-dwarf">
-      <%= @dwarf.description %>
+    <div class="card-dwarf-infos d-flex justify-content-between pb-4 pt-4">
+      <p><%= @dwarf.description %></p>
     </div>
-    <div class="contact-dwarf">
-      <%= @dwarf.price %>€
-      <br>
-      Contact now <%= @dwarf.user.username %>, to book this dwarf !
+    <div class="card-dwarf-infos">
+      <div class="d-flex justify-content-between border-top border-bottom pb-4 pt-4">
+        <div>
+          Contact now <%= @dwarf.user.username %>, to book this dwarf !
+        </div>
+        <%= @dwarf.price %>€
+      </div>
     </div>
   </div>
+</div>
 
+<div class="card-dwarf">
   <div class="deux-dwarf">
     <div class="review-dwarf">
       <ul>
@@ -62,5 +64,9 @@
   </div>
 </div>
 
- 
-<%= link_to "back to index", dwarves_path, class: "btn btn-secondary"%>
+
+<%= link_to "back to index", dwarves_path, class: "btn btn-secondary btn-dwarf"%>
+
+
+
+<%# height: 300, width: 400, crop: :fill %>
