@@ -41,11 +41,11 @@ legend ~ div.form-check:first-of-type {
 
 .form-box {
 	background-color: rgba(0, 0, 0, 0.5);
-	margin: auto auto;
+	margin: 100px auto;
 	padding: 40px;
 	border-radius: 5px;
 	box-shadow: 0 0 10px #000;
-	position: absolute;
+	position: relative;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -80,6 +80,7 @@ legend ~ div.form-check:first-of-type {
 	display: block;
 	filter: blur(2px);
 }
+
 
 .form-box .header-text {
 	font-size: 32px;
