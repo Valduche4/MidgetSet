@@ -1,66 +1,144 @@
-.titre-dwarf {
-  text-align: center;
-  margin: 20px 0px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.total-dwarf {
-  padding-left: 100px;
-  padding-right: 100px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+// .titre-dwarf {
+//   text-align: center;
+//   margin: 20px 0px;
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// }
+// .total-dwarf {
+//   padding-left: 100px;
+//   padding-right: 100px;
+//   display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+// }
+
+// .un-dwarf {
+//   margin: 30px 15px;
+//   background-color: white;
+//   width: 45%;
+//   .info-dwarf {
+//     background-color: grey;
+//     margin: 10px 10px;
+//     padding: 15px;
+//   }
+// }
+
+// .img-dwarf {
+//   margin: 10px;
+// }
+
+// .list-dwarf {
+//   list-style-type: none;
+//   color: white;
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//   padding-left: 0px;
+// }
+
+// .description-dwarf {
+//   background-color: grey;
+//   margin: 10px 10px;
+//   padding: 15px;
+//   color: white;
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// }
+// .contact-dwarf {
+//   background-color: grey;
+//   margin: 10px 10px;
+//   padding: 15px;
+//   color: white;
+//   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// }
+
+// .deux-dwarf {
+//   width: 100%;
+//   display: flex;
+//   margin-top: 30px;
+// }
+
+
+.card-dwarf {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 50px 100px;
+  margin-bottom: 0px;
+
 }
 
-.un-dwarf {
-  margin: 30px 15px;
-  background-color: white;
-  width: 45%;
-  .info-dwarf {
-    background-color: grey;
-    margin: 10px 10px;
-    padding: 15px;
+.card-dwarf-img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-dwarf h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-dwarf p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.card-dwarf .card-dwarf-infos {
+  padding: 16px;
+  h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+}
+
+.card-dwarf-infos .card-dwarf-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.btn-secondary {
+  margin-left: 100px;
+}
+
+.categorie {
+  background-color: rgb(12, 131, 229);
+  padding: 10px 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-top: 20px;
+  opacity: 0.6;
+  p {
+    color: white;
+    opacity: 1;
   }
 }
 
-.img-dwarf {
-  margin: 10px;
+.categories {
+  margin-top: 20px;
 }
 
-.list-dwarf {
-  list-style-type: none;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-left: 0px;
-}
-
-.description-dwarf {
-  background-color: grey;
-  margin: 10px 10px;
-  padding: 15px;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.contact-dwarf {
-  background-color: grey;
-  margin: 10px 10px;
-  padding: 15px;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.deux-dwarf {
-  width: 45%;
-}
 .review-dwarf {
-  background-color: white;
-  margin: 30px 15px;
+  // background-color: antiquewhite;
+  width: 500px;
+  height: auto;
+  // margin: 30px 15px;
   padding: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .reservation-dwarf {
-  background-color: white;
-  margin: 30px 15px;
+  // background-color: antiquewhite;
+  // margin: 30px 15px;
+  width: 500px;
+  height: auto;
   padding: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resareview {
+  // display: grid;
 }
