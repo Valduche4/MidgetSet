@@ -1,7 +1,7 @@
 <div class="card-dwarf">
   <div class="un-dwarf">
     <div class="img-dwarf">
-      <%= cl_image_tag @dwarf.photo.key, class: "card-dwarf-img" %>
+     <%= cl_image_tag @dwarf.photo.key, class: "card-dwarf-img" %>
     </div>
     <div class="card-dwarf-infos p-4">
       <h3 class="pb-4"> <%= @dwarf.name %> </h3>
@@ -28,7 +28,7 @@
         <div>
           <p>Contact now <%= @dwarf.user.username %>, to book this dwarf !</p>
         </div>
-        <p><%= @dwarf.price %>0€</p>
+          <p id="price"><%= @dwarf.price %>0€</p>
       </div>
     </div>
   </div>
@@ -39,16 +39,26 @@
     <div class="review-dwarf">
       <ul class="list-unstyled">
         <% @dwarf.reviews.each do |review| %>
-            <li><p><%=  review.content %> || <%= review.rating %>
+        <li>
+            <div class="review-card">
+              <h5><% review.rating %> <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></h5>
+              <p><%=  review.content %> </p>
+            </div>
+            <div class="delete-review">
               <% if policy(review).destroy? %>
                 <%= link_to "🗑",
                         review_path(review),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %></p></li>
+                        data: { confirm: "Are you sure?" } %>
               <% end %>
+            </div>
+        </li>
         <% end %>
-      </ul>
-      <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
+    </ul>
+      </div>
+          <div class="review-button">
+            <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
+          </div>
     </div>
   </div>
 

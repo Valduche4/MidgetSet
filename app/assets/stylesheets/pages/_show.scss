@@ -54,7 +54,10 @@
 //   margin-top: 30px;
 // }
 
-
+#price {
+  font-weight: bold;
+  font-size: 20px;
+}
 .card-dwarf {
   overflow: hidden;
   background: white;
@@ -122,6 +125,31 @@
   margin-top: 20px;
 }
 
+.list-dwarf {
+  list-style-type: none;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 0px;
+}
+
+.description-dwarf {
+  background-color: grey;
+  margin: 10px 10px;
+  padding: 15px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact-dwarf {
+  background-color: grey;
+  margin: 10px 10px;
+  padding: 15px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.deux-dwarf {
+  width: 45%;
+}
 .review-dwarf {
   // background-color: antiquewhite;
   width: 500px;
@@ -129,6 +157,8 @@
   // margin: 30px 15px;
   padding: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 
 .reservation-dwarf {
