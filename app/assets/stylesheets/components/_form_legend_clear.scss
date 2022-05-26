@@ -43,7 +43,7 @@ legend ~ div.form-check:first-of-type {
 	background-color: rgba(0, 0, 0, 0.5);
 	margin: 100px auto;
 	padding: 40px;
-	border-radius: 5px;
+	border-radius: 10px;
 	box-shadow: 0 0 10px #000;
 	position: relative;
 	top: 0;
@@ -155,4 +155,9 @@ legend ~ div.form-check:first-of-type {
 }
 .form-inputs {
   color: #BBB;
+}
+
+.form-box-signup {
+	margin: 250px auto;
+	height: 700px;
 }

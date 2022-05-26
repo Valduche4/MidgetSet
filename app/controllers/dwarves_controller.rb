@@ -1,7 +1,17 @@
 class DwarvesController < ApplicationController
   before_action :set_dwarf, only: [:show, :edit, :update, :destroy]
   def index
-    @dwarves = policy_scope(Dwarf.all)
+    if params[:query].present?
+      sql_query = " \
+        dwarves.name @@ :query \
+        OR dwarves.description @@ :query \
+        OR dwarves.sexe @@ :query \
+        OR dwarves.origin @@ :query \
+      "
+      @dwarves = policy_scope(Dwarf.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @dwarves = policy_scope(Dwarf.all)
+    end
   end
 
   def show

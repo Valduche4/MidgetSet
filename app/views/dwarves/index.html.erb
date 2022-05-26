@@ -10,6 +10,16 @@
       <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
     </div>
 </div>
+<div>
+  <%= form_tag dwarves_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a dwarf"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 <br>
 <div class="container">
         <div class="cards-dwarves">
@@ -24,7 +34,7 @@
                 <h2 class="card-trip-pricing">€<%= dwarf.price %>/h</h2>
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
-              <div class="card-trip-button">
+              <div class="card-trip-boutax">
                 <%= link_to "✎",  edit_dwarf_path(dwarf) if policy(dwarf).edit?%>
                 <%= link_to "🗑", dwarf_path(dwarf), method: :delete, data: { confirm: "Are you sure?" } if policy(dwarf).destroy? %>
               </div>
