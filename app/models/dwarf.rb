@@ -14,5 +14,4 @@ class Dwarf < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :city, presence: true
-  validates :jobs, presence: true
 end

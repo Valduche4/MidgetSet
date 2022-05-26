@@ -15,7 +15,7 @@
         <div class="cards-dwarves">
           <% @dwarves.each do |dwarf| %>
             <div class="card-trip">
-            <%= cl_image_tag dwarf.photo.key, crop: :fill %>
+             <%= cl_image_tag dwarf.photo.key, crop: :fill %>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= link_to dwarf.name, dwarf_path(dwarf) %></h2>
