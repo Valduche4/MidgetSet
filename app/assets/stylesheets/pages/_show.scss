@@ -48,26 +48,11 @@
 //   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 // }
 
-.deux-dwarf {
-  width: 100%;
-  display: flex;
-  margin-top: 30px;
-}
-.review-dwarf {
-  background-color: antiquewhite;
-  width: 50%;
-  // margin: 30px 15px;
-  padding: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.reservation-dwarf {
-  background-color: antiquewhite;
-  // margin: 30px 15px;
-  width: 50%;
-  padding: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+// .deux-dwarf {
+//   width: 100%;
+//   display: flex;
+//   margin-top: 30px;
+// }
 
 
 .card-dwarf {
@@ -75,6 +60,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 50px 100px;
+  margin-bottom: 0px;
+
 }
 
 .card-dwarf-img {
@@ -83,21 +70,26 @@
   object-fit: cover;
 }
 
-.card-dwarf h2 {
+.card-dwarf h5 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card-dwarf p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: .7;
   margin: 0;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 .card-dwarf .card-dwarf-infos {
   padding: 16px;
+  h3 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
 
 }
 
@@ -110,4 +102,43 @@
 
 .btn-secondary {
   margin-left: 100px;
+}
+
+.categorie {
+  background-color: rgb(12, 131, 229);
+  padding: 10px 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-top: 20px;
+  opacity: 0.6;
+  p {
+    color: white;
+    opacity: 1;
+  }
+}
+
+.categories {
+  margin-top: 20px;
+}
+
+.review-dwarf {
+  // background-color: antiquewhite;
+  width: 500px;
+  height: auto;
+  // margin: 30px 15px;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.reservation-dwarf {
+  // background-color: antiquewhite;
+  // margin: 30px 15px;
+  width: 500px;
+  height: auto;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resareview {
+  // display: grid;
 }

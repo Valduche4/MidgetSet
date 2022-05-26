@@ -4,7 +4,7 @@
       <%= cl_image_tag @dwarf.photo.key, class: "card-dwarf-img" %>
     </div>
     <div class="card-dwarf-infos p-4">
-      <h2 class="pb-4"> <%= @dwarf.name %> </h2>
+      <h3 class="pb-4"> <%= @dwarf.name %> </h3>
       <ul class="list-unstyled d-flex justify-content-between border-top border-bottom pb-4 pt-4">
         <li class="border-left"><p> Sexe : <%= @dwarf.sexe%></p></li>
         <li class="border-left"><p>Origin : <%= @dwarf.origin %></p></li>
@@ -13,41 +13,50 @@
         <li class="pl-2"><p>City :<%= @dwarf.city %></p></li>
       </ul>
     </div>
-    <div class="card-dwarf-infos d-flex justify-content-between pb-4 pt-4">
+    <div class="card-dwarf-infos pb-4">
       <p><%= @dwarf.description %></p>
+      <div class="categories">
+        <div class="d-flex">
+          <% @dwarf.jobs.each do |job| %>
+                        <div class="categorie"><p><%= job.name %></p></div>
+                        <% end %>
+        </div>
+      </div>
     </div>
     <div class="card-dwarf-infos">
-      <div class="d-flex justify-content-between border-top border-bottom pb-4 pt-4">
+      <div class="d-flex justify-content-between border-top pb-4 pt-4">
         <div>
-          Contact now <%= @dwarf.user.username %>, to book this dwarf !
+          <p>Contact now <%= @dwarf.user.username %>, to book this dwarf !</p>
         </div>
-        <%= @dwarf.price %>€
+        <p><%= @dwarf.price %>0€</p>
       </div>
     </div>
   </div>
 </div>
 
-<div class="card-dwarf">
-  <div class="deux-dwarf">
+<div class="d-flex justify-content-between">
+  <div class="card-dwarf">
     <div class="review-dwarf">
-      <ul>
+      <ul class="list-unstyled">
         <% @dwarf.reviews.each do |review| %>
-            <li><%=  review.content %> || <%= review.rating %>
+            <li><p><%=  review.content %> || <%= review.rating %>
               <% if policy(review).destroy? %>
                 <%= link_to "🗑",
                         review_path(review),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %></li>
+                        data: { confirm: "Are you sure?" } %></p></li>
               <% end %>
         <% end %>
       </ul>
       <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
     </div>
+  </div>
 
+  <div class="card-dwarf">
     <div class="reservation-dwarf">
-      <ul>
+      <ul class="list-unstyled">
         <% @dwarf.reservations.each do |reservation| %>
-          <li><%=  reservation.start_time %> || <%= reservation.end_time %>
+          <li><p><%=  reservation.start_time %> || <%= reservation.end_time %>
               <% if current_user == @dwarf.user && reservation.validation == false%>
                  <%= link_to "accept", reservation_validations_path(reservation), method: :post %>
               <% end %>
@@ -55,7 +64,7 @@
                 <%= link_to "🗑",
                         reservation_path(reservation),
                         method: :delete,
-                        data: { confirm: "Are you sure?" } %></li>
+                        data: { confirm: "Are you sure?" } %></p></li>
                         <% end %>
         <% end %>
       </ul>
@@ -65,14 +74,8 @@
 </div>
 
 
-<%= link_to "back to index", dwarves_path, class: "btn btn-secondary btn-dwarf"%>
+<%= link_to "back to index", dwarves_path, class: "btn btn-secondary btn-dwarf mt-5 mb-5"%>
 
 
 
 <%# height: 300, width: 400, crop: :fill %>
-
-
-<li><% @dwarf.jobs.each do |job| %>
-                    <%= job.name %>
-                    <% end %></li>
-<%= @dwarf.user.username %>
