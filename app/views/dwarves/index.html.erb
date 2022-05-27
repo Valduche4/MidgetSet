@@ -23,7 +23,6 @@
      </div>
   <% end %>
 </div>
-<br>
 <div class="teuks">
         <div class="cards-dwarves">
           <% @dwarves.each do |dwarf| %>
@@ -47,6 +46,7 @@
 </div>
 
 <div class="teuks">
+<h4>Find me on the map</h4>
   <div class="teucar" style="width: 100%; height: 500px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
