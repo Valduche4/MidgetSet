@@ -114,7 +114,18 @@ a {
       :hover {
         background-color: rgb(2, 2, 178);
       }
-
     }
+  }
+}
+
+@media(max-width: 1200px) {
+  .cards-dwarves {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards-dwarves {
+    grid-template-columns: 1fr;
   }
 }
