@@ -31,10 +31,10 @@
               <div class="card-trip-infos">
                 <div class="link-dwarf-dwarf">
                   <h2><%= link_to dwarf.name, dwarf_path(dwarf), class: "name-index" %></h2>
-                  <p><%= dwarf.description %></p>
+                  <p><%= dwarf.sexe %></p>
+                  <p><%= dwarf.origin %></p>
                 </div>
                 <h2 class="card-trip-pricing name-index">€<%= dwarf.price %>/h</h2>
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
               <div class="card-trip-boutax">
                 <%= link_to "✎",  edit_dwarf_path(dwarf) if policy(dwarf).edit?%>
