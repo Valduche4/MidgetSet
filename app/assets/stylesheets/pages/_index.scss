@@ -115,11 +115,19 @@ a {
 }
 
 .teucar {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .teuks {
-  margin: 0px 100px;
+  margin: 30px 100px;
+  h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 1;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
 }
 
 
@@ -158,4 +166,8 @@ a {
 .name-index {
   color: rgb(105, 102, 102)!important;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.teucar {
+  border: 10px solid antiquewhite;
 }
