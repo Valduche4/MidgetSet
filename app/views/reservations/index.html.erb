@@ -5,8 +5,14 @@
     <div class="card-product">
       <%= cl_image_tag reservation.dwarf.photo.key %>
         <div class="card-product-infos">
-          <h2><%= reservation.dwarf.name %></h2>
-          <p><%= reservation.start_time %>|  |<%= reservation.end_time %> || <%= reservation.validation %></p>
+          <h2><%=link_to reservation.dwarf.name, dwarf_path(reservation.dwarf), class: "lien-raisin" %></h2>
+            <p>From : <%=  reservation.start_time.day %>/<%=  reservation.start_time.month %> at : <%=  reservation.start_time.hour %>h<%=  reservation.start_time.min %></p>
+            <p>Until   : <%=  reservation.end_time.day %>/<%=  reservation.end_time.month %> at : <%=  reservation.end_time.hour %>h<%=  reservation.end_time.min %></p>
+          <% if reservation.validation == true %>
+              <h5 class="text-success"> Accepted</h5>
+            <% else %>
+              <h5 class="text-warning">Waiting for validation from the owner</h5>
+            <% end %>
         </div>
     </div>
 <% end %>
