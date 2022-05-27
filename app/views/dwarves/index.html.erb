@@ -31,10 +31,10 @@
              <%= cl_image_tag dwarf.photo.key, crop: :fill %>
               <div class="card-trip-infos">
                 <div class="link-dwarf-dwarf">
-                  <h2><%= link_to dwarf.name, dwarf_path(dwarf) %></h2>
+                  <h2><%= link_to dwarf.name, dwarf_path(dwarf), class: "name-index" %></h2>
                   <p><%= dwarf.description %></p>
                 </div>
-                <h2 class="card-trip-pricing">€<%= dwarf.price %>/h</h2>
+                <h2 class="card-trip-pricing name-index">€<%= dwarf.price %>/h</h2>
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
               </div>
               <div class="card-trip-boutax">
