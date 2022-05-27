@@ -6,28 +6,30 @@
 
  <div class="banner-dwarves">
     <h1> Dwarves </h1>
+    <h3>Take a look at the dwarves available</h3>
     <div class="link-button-index">
       <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
     </div>
 </div>
-<div>
+<div class="search-bar">
   <%= form_tag dwarves_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a dwarf"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <div class="search">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a dwarf"
+      %>
+       <%= submit_tag "Search", class: "btn" %>
+     </div>
   <% end %>
 </div>
-<br>
 <div class="container">
         <div class="cards-dwarves">
           <% @dwarves.each do |dwarf| %>
             <div class="card-trip">
              <%= cl_image_tag dwarf.photo.key, crop: :fill %>
               <div class="card-trip-infos">
-                <div>
+                <div class="link-dwarf-dwarf">
                   <h2><%= link_to dwarf.name, dwarf_path(dwarf) %></h2>
                   <p><%= dwarf.description %></p>
                 </div>

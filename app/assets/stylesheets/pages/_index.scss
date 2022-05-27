@@ -9,9 +9,10 @@
   margin-bottom: 20px;
 }
 .banner-dwarves {
-  background-image: url("https://static1.colliderimages.com/wordpress/wp-content/uploads/the-hobbit-an-unexpected-journey-dwarf-banner-slice.jpg?q=50&fit=contain&w=960&h=320&dpr=1.5");
+  background-image: url("https://www.10wallpaper.com/wallpaper/medium/1801/Original_jungle_stream_falls_dead_wood_medium.jpg");
   color: beige;
   height: 500px;
+  scale:1.0 ;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,6 +21,12 @@
     font-size:120px;
     padding-top: 110px;
     opacity: 1;
+    margin-left: 100px;
+  }
+  h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 1;
+    font-size: 30px;
     margin-left: 100px;
   }
 }
@@ -64,6 +71,9 @@
   padding: 15px 20px;
   transition-duration: 2s, 2s;
 }
+a {
+  text-decoration: none;
+}
 
 .card-dwarves{
   padding-top: 40px;
@@ -71,6 +81,7 @@
   .card-trip-info {
     background-color:rgb(211, 211, 211) ;
   }
+
 }
 
 .card-trip {
@@ -83,4 +94,27 @@
   // justify-content: end;
   // // align-content: flex-end;
   vertical-align: text-bottom;
+}
+
+
+
+.search-bar {
+  .search{
+    display: flex;
+    text-align: right !important;
+    margin: 400px ;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border-radius: 15%;
+    border: 2px lightgrey;
+    .btn {
+      background-color: rgb(2, 2, 178);
+      color: beige;
+      border-radius: 0 5% 5% 0;
+      :hover {
+        background-color: rgb(2, 2, 178);
+      }
+
+    }
+  }
 }
