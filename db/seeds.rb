@@ -19,7 +19,9 @@ jobs = Job.create([{ name: "Wrestler" }, { name: "Stripteaser"}, { name: "Cospla
 
 user = User.create(username: "val", email: "hello@leo.com", password: "123456")
 
-3.times do
+adresses = ["Chaussée de boitsfort 140, Bruxelles", "Avenue Baron d'huart 35, Bruxelles", "Rue du merlo 200, Uccle", "becentral", "Chaussée de Malines 302, Bruxelles", "Avenue de tervuren 300, Bruxelles"]
+
+12.times do
   dwarf = Dwarf.new(
     user: user,
     name: Faker::Name.name,
@@ -29,9 +31,9 @@ user = User.create(username: "val", email: "hello@leo.com", password: "123456")
     size: rand(1...150),
     description: Faker::Lorem.sentence,
     price: rand(1...200),
-    address: "chaussee de malines 300, kraainem"
+    address: adresses.sample
   )
-  dwarf.photo.attach(io: File.open(URI.open("https://picsum.photos/400/600")), filename: 'file.jpeg')
+  dwarf.photo.attach(io: File.open(URI.open("https://i.pinimg.com/originals/7f/1c/86/7f1c86c116ec6436a04f891b090d0e6b.png")), filename: 'file.jpeg')
   dwarf.save!
 
   JobDwarf.create(dwarf: dwarf, job: jobs.sample)
