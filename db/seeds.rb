@@ -15,7 +15,7 @@ JobDwarf.destroy_all
 
 
 file = URI.open("https://picsum.photos/400/600")
-jobs = Job.create([{ name: "Wrestler" }, { name: "Stripteaser"}, { name: "Cosplay"}, { name: "Darts"}, { name: "Canonman"}, { name: "Friend"}, { name: "Bachelor animator"}, { name: "Signer"}])
+jobs = Job.create([{ name: "Wrestler" }, { name: "Stripteaser"}, { name: "Cosplay"}, { name: "Darts"}, { name: "Canonman"}, { name: "Friend"}, { name: "Bachelor animator"}, { name: "Singer"}])
 
 user = User.create(username: "val", email: "hello@leo.com", password: "123456")
 

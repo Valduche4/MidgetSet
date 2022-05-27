@@ -34,54 +34,58 @@
   </div>
 </div>
 
-<div class="d-flex justify-content-between">
-  <div class="card-dwarf">
-    <div class="review-dwarf">
-      <ul class="list-unstyled">
+
+  <div class="review-book-cards">
+    <div class="card-dwarf-dafuck">
         <% @dwarf.reviews.each do |review| %>
-        <li>
-            <div class="review-card">
-              <h5><% review.rating %> <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></h5>
-              <p><%=  review.content %> </p>
+            <div class="review-dwarf">
+              <div class="review-card">
+                <h5><% review.rating %> <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span></h5>
+                <p><%=  review.content %> </p>
+              </div>
+              <div class="delete-review">
+                <% if policy(review).destroy? %>
+                  <%= link_to "🗑",
+                          review_path(review),
+                          method: :delete,
+                          class: "delete-buttons",
+                          data: { confirm: "Are you sure?" } %>
+                <% end %>
+              </div>
             </div>
-            <div class="delete-review">
-              <% if policy(review).destroy? %>
-                <%= link_to "🗑",
-                        review_path(review),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %>
-              <% end %>
-            </div>
-        </li>
         <% end %>
-    </ul>
+            <div class="review-button">
+              <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
+            </div>
       </div>
-          <div class="review-button">
-            <%= link_to "Add a review", new_dwarf_review_path(@dwarf), class: "btn btn-primary"%>
-          </div>
+
+    <div class="card-dwarf-dafuck">
+      <div class="reservation-dwarf">
+          <% @dwarf.reservations.each do |reservation| %>
+            <div class="reservation-card">
+                <div class="resrvation-dates">
+                    <p><%=  reservation.start_time %></p>
+                    <p><%= reservation.end_time %></p>
+                </div>
+                  <div class="reservation-buttons">
+                    <% if current_user == @dwarf.user && reservation.validation == false%>
+                      <%= link_to "accept", reservation_validations_path(reservation), class: "delete-buttons accept-button", method: :post %>
+                    <% end %>
+                    <% if policy(reservation).destroy? %>
+                      <%= link_to "🗑",
+                              reservation_path(reservation),
+                              method: :delete,
+                              class: "delete-buttons",
+                              data: { confirm: "Are you sure?" } %>
+                              <% end %>
+                  </div>
+            </div>
+          <% end %>
+        <%= link_to "Book now!", new_dwarf_reservation_path(@dwarf), class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 
-  <div class="card-dwarf">
-    <div class="reservation-dwarf">
-      <ul class="list-unstyled">
-        <% @dwarf.reservations.each do |reservation| %>
-          <li><p><%=  reservation.start_time %> || <%= reservation.end_time %>
-              <% if current_user == @dwarf.user && reservation.validation == false%>
-                 <%= link_to "accept", reservation_validations_path(reservation), method: :post %>
-              <% end %>
-              <% if policy(reservation).destroy? %>
-                <%= link_to "🗑",
-                        reservation_path(reservation),
-                        method: :delete,
-                        data: { confirm: "Are you sure?" } %></p></li>
-                        <% end %>
-        <% end %>
-      </ul>
-      <%= link_to "Book now!", new_dwarf_reservation_path(@dwarf), class: "btn btn-primary" %>
-    </div>
-  </div>
-</div>
 
 
 <%= link_to "back to index", dwarves_path, class: "btn btn-secondary btn-dwarf mt-5 mb-5"%>

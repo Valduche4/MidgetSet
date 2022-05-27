@@ -1,36 +1,27 @@
-
-
-<%# <%= dwarf.name %>
-<%# <%= link_to "show", dwarf_path(dwarf) %>
- <%# <%= link_to "edit",  edit_dwarf_path(dwarf) %>
-
- <div class="banner-dwarves">
-    <h1> Dwarves </h1>
-    <h3>Take a look at the dwarves available</h3>
+<div class="banner-dwarves">
+    <h1> My dwarves </h1>
     <div class="link-button-index">
       <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
     </div>
 </div>
-<div class="search-bar">
+<div>
   <%= form_tag dwarves_path, method: :get do %>
-    <div class="search">
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a dwarf"
-      %>
-       <%= submit_tag "Search", class: "btn" %>
-     </div>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a dwarf"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
 <br>
-<div class="teuks">
+<div class="container">
         <div class="cards-dwarves">
           <% @dwarves.each do |dwarf| %>
             <div class="card-trip">
              <%= cl_image_tag dwarf.photo.key, crop: :fill %>
               <div class="card-trip-infos">
-                <div class="link-dwarf-dwarf">
+                <div>
                   <h2><%= link_to dwarf.name, dwarf_path(dwarf) %></h2>
                   <p><%= dwarf.description %></p>
                 </div>
@@ -45,16 +36,6 @@
           <% end %>
         </div>
 </div>
-
-<div class="teuks">
-  <div class="teucar" style="width: 100%; height: 500px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
-
-
 
 <div class="button-bottom-link">
   <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
