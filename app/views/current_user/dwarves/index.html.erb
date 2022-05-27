@@ -1,20 +1,21 @@
-<div class="banner-dwarves">
+<div class="banner-mydwarves">
     <h1> My dwarves </h1>
     <div class="link-button-index">
       <%= link_to "Add a dwarf", new_dwarf_path if policy(Dwarf).new?%>
     </div>
 </div>
-<div>
+<div class="search-bar">
   <%= form_tag dwarves_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a dwarf"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <div class="search">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a dwarf"
+      %>
+       <%= submit_tag "Search", class: "btn" %>
+     </div>
   <% end %>
 </div>
-<br>
 <div class="container">
         <div class="cards-dwarves">
           <% @dwarves.each do |dwarf| %>
