@@ -12,6 +12,12 @@ class DwarvesController < ApplicationController
     else
       @dwarves = policy_scope(Dwarf.all)
     end
+    @markers = @dwarves.geocoded.map do |dwarf|
+      {
+        lat: dwarf.latitude,
+        lng: dwarf.longitude
+      }
+    end
   end
 
   def show

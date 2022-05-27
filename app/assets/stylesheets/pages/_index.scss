@@ -2,7 +2,8 @@
 @import "home";
 @import "show";
 
-.container > h1 {
+
+.teuks > h1 {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 80px;
   align-items: center;
@@ -96,6 +97,12 @@ a {
   vertical-align: text-bottom;
 }
 
+.teucar {
+  margin-top: 50px;
+}
+
+.teuks {
+  margin: 0px 100px;
 
 
 .search-bar {
